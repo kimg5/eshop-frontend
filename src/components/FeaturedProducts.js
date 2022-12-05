@@ -17,7 +17,7 @@ export function FeaturedProducts() {
     
   return (
     
-    <Container sx={{ py: 8 }} maxWidth="md">
+    <Container sx={{ py: 8 }} maxWidth="lg">
       <Typography
               component="h1"
               variant="h2"
@@ -42,14 +42,14 @@ export function FeaturedProducts() {
                     component="img"
                     sx={{
                       // 16:9
-                      pt: '56.25%',
+                      pt: '0%',
                     }}
                     image="https://source.unsplash.com/random"
                     alt="featured products"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Product name
                     </Typography>
                     <Typography>
                       This is a media card. You can use this section to describe the
