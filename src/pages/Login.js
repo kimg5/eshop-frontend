@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import LoginIcon from '@mui/icons-material/Login';
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import AuthContext from "../context/authContext";
@@ -29,8 +30,8 @@ function Login() {
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
+        <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+          <LoginIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
