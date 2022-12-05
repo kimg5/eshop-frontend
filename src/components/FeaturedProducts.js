@@ -57,7 +57,7 @@ export function FeaturedProducts() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">View</Button>
+                    <Button size="small" >View</Button>
                     {/* <Button size="small">Edit</Button> */}
                   </CardActions>
                 </Card>
@@ -70,7 +70,7 @@ export function FeaturedProducts() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Shop All Products</Button>
+              <Button variant="contained" href="/products">Shop All Products</Button>
             </Stack>
         </Container>
     )
