@@ -16,7 +16,10 @@ function MainLayout() {
       }}
     >
       <Header />   
-      <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+      {/* <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm"> */}
+      <Container component="main" sx={{ mt: 8, mb: 2 }} >
+
+
        <Outlet />
       </Container>
       <Box
