@@ -89,31 +89,10 @@ const AboutPage = () => {
 const Wrapper = styled.section`
   display: grid;
   gap: 4rem;
-  /* overflow: hidden; */
-
-  img {
-    display: block;
-    width: 100%;
-    display: block;
-    border-radius: var(--radius);
-    height: 500px;
-    object-fit: cover;
-  }
-
-  p {
-    text-align: justify;
-    line-height: 2;
-    max-width: 45em;
-    /* margin: 0 auto; */
-    margin-top: 2rem;
-    color: var(--clr-grey-5);
-  }
   .title {
     text-align: left;
   }
-  .underline {
-    margin-left: 0;
-  }
+  /* overflow: hidden; */
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
   }
