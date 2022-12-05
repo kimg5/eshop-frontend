@@ -6,7 +6,7 @@ import Link from "@mui/material/Link";
 function Footer() {
   return (
       <Container maxWidth="sm">
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" textAlign="center">
           {"Copyright © "}
           <Link color="inherit" href="#">
           MERN Furniture 
