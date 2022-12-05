@@ -50,11 +50,7 @@ function App() {
             path="cart"
             element={
                 <Cart />
-<<<<<<< HEAD
             }
-=======
-           }
->>>>>>> 77adef5a81937efcf46fe071b26f3c2021bd3426
           />
 
           <Route
