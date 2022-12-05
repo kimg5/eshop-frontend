@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import Button from "@mui/material/Button";
 import { CssBaseline } from "@mui/material";
 
@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import Signup from "./pages/Signup";
 
 import WithAuth from "./components/WithAuth";
+import { ThemeContextProvider } from "./context/themeContext";
 import "./App.css";
 
 function App() {
@@ -30,31 +31,12 @@ function App() {
     [primaryColor],
   );
 */
-  const lightTheme = createTheme({
-    palette: {
-      mode: "light",
-    },
-  });
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-    },
-  });
-
-  const [theme, setTheme] = React.useState(lightTheme);
-
-  const changeTheme = () => {
-    if (theme.palette.mode === "dark") {
-      setTheme(lightTheme);
-    } else setTheme(darkTheme);
-  };
+  
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeContextProvider>
       <CssBaseline />
-      <div style={{ margin: 100 }}>
-        <Button onClick={changeTheme}>changeTheme</Button>
-      </div>
+      
 
       <Routes>
         <Route path="/" element={<MainLayout />}>
@@ -83,7 +65,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </ThemeProvider>
+    </ThemeContextProvider>
   );
 }
 
