@@ -1,21 +1,32 @@
 import React from "react";
-import "./Home.css";
+import { FeaturedProducts } from "../components/FeaturedProducts";
+import { Hero } from "../components/Hero";
+import Box from '@mui/material/Box';
 
-import Button from '@mui/material/Button';
+// import "./Home.css";
+
+
+
 
 function Home() {
   const go = (url) => {
-    
-  }
 
-     return (
-      <div>
-         <Button onClick={go}>
-                change color
-              </Button>
-      </div>
-    );
   }
-  
+     return (
+       <main>
+         <Box
+          sx={{
+            bgcolor: 'background.paper',
+            pt: 8,
+            pb: 6,
+          }}
+        >
+       <Hero />
+           <FeaturedProducts /> 
+           </Box>   
+      </main>
+       
+    );
+}
   export default Home;
   
