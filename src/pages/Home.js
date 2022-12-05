@@ -1,17 +1,13 @@
 import React from "react";
-import { FeaturedProducts } from "../components/FeaturedProducts";
-import { Hero } from "../components/Hero";
-import Box from '@mui/material/Box';
+import "./Home.css";
 
-// import "./Home.css";
-
-
-
+import Button from '@mui/material/Button';
 
 function Home() {
   const go = (url) => {
-
+    
   }
+
      return (
        <main>
          <Box
@@ -25,7 +21,8 @@ function Home() {
            <FeaturedProducts /> 
            </Box>   
       </main>
-    );
-}
+   );
+  }
+  
   export default Home;
   
