@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import {CssBaseline} from '@mui/material';
+import { CssBaseline } from "@mui/material";
 
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
@@ -15,7 +15,6 @@ import Signup from "./pages/Signup";
 
 import WithAuth from "./components/WithAuth";
 import "./App.css";
-
 
 function App() {
   /*
@@ -33,17 +32,17 @@ function App() {
 */
   const lightTheme = createTheme({
     palette: {
-      mode: 'light',
-    }  
+      mode: "light",
+    },
   });
   const darkTheme = createTheme({
     palette: {
-      mode: 'dark',
-    }  
+      mode: "dark",
+    },
   });
 
   const [theme, setTheme] = React.useState(lightTheme);
-  
+
   const changeTheme = () => {
     if (theme.palette.mode === "dark") {
       setTheme(lightTheme);
@@ -52,12 +51,11 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-        <CssBaseline/>
-      <div style={{margin:100}}>
-      <Button onClick={changeTheme}>changeTheme</Button>
-
+      <CssBaseline />
+      <div style={{ margin: 100 }}>
+        <Button onClick={changeTheme}>changeTheme</Button>
       </div>
-      
+
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
@@ -65,11 +63,24 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="about" element={<About />} />
           <Route path="signup" element={<Signup />} />
-          
-          <Route path="cart" element={<WithAuth><Cart /></WithAuth>} />
-          
-          <Route path="admin" element={<WithAuth role='admin'><Admin /></WithAuth>} />
 
+          <Route
+            path="cart"
+            element={
+              <WithAuth>
+                <Cart />
+              </WithAuth>
+            }
+          />
+
+          <Route
+            path="admin"
+            element={
+              <WithAuth role="admin">
+                <Admin />
+              </WithAuth>
+            }
+          />
         </Route>
       </Routes>
     </ThemeProvider>

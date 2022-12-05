@@ -2,7 +2,7 @@ import React, { useReducer, useCallback, useEffect } from "react";
 import reducer from "../reducers/authReducer";
 import http from "../utils/http";
 import { api_login_url } from "../utils/constants";
-import { POST_LOGIN_BEGIN, POST_LOGIN_SUCCESS, POST_LOGIN_ERROR,LOGOUT } from "../actions";
+import { POST_LOGIN_BEGIN, POST_LOGIN_SUCCESS, POST_LOGIN_ERROR, LOGOUT } from "../actions";
 
 const AuthContext = React.createContext();
 export default AuthContext;
@@ -14,28 +14,24 @@ const publicItems = [
   { title: "Cart", url: "/cart" },
 ];
 
-const adminItems = [
-    { title: "Admin", url: "/admin" },
-];
+const adminItems = [{ title: "Admin", url: "/admin" }];
 
-const loggedInItems = [
-    { title: "Logout", url: "/logout" },
-];
+const loggedInItems = [{ title: "Logout", url: "/logout" }];
 
 const loggedOutItems = [
-    { title: "Login", url: "/login" },
-    { title: "SignUp", url: "/signup" },
+  { title: "Login", url: "/login" },
+  { title: "SignUp", url: "/signup" },
 ];
 
 const initialState = {
   token: "",
   isLoggedIn: false,
   role: "",
-  navItems: [...publicItems,...loggedOutItems],
-  publicItems:publicItems,
+  navItems: [...publicItems, ...loggedOutItems],
+  publicItems: publicItems,
   adminItems: adminItems,
-  loggedInItems:loggedInItems,
-  loggedOutItems:loggedOutItems,
+  loggedInItems: loggedInItems,
+  loggedOutItems: loggedOutItems,
   isLoading: false,
 };
 
@@ -43,10 +39,8 @@ export const AuthContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const loginHandler = async (username, password) => {
-    console.log("loginhandler",username,password);
     dispatch({ type: POST_LOGIN_BEGIN });
     try {
-      console.log("send post")  
       let content = await http.post(api_login_url, { username: username, password: password });
       dispatch({ type: POST_LOGIN_SUCCESS, content: content });
     } catch (error) {
@@ -55,13 +49,13 @@ export const AuthContextProvider = (props) => {
   };
 
   const logoutHandler = useCallback(() => {
-    dispatch({type:LOGOUT});
+    dispatch({ type: LOGOUT });
   }, []);
 
   const contextValue = {
-     ...state,
-     login: loginHandler,
-     logout: logoutHandler,
+    ...state,
+    login: loginHandler,
+    logout: logoutHandler,
   };
 
   return <AuthContext.Provider value={contextValue}>{props.children}</AuthContext.Provider>;
