@@ -49,9 +49,7 @@ function App() {
           <Route
             path="cart"
             element={
-              <WithAuth>
                 <Cart />
-              </WithAuth>
             }
           />
 

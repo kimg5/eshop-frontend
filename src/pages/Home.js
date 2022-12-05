@@ -25,7 +25,6 @@ function Home() {
            <FeaturedProducts /> 
            </Box>   
       </main>
-       
     );
 }
   export default Home;
