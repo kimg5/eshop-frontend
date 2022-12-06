@@ -27,7 +27,7 @@ export function Signup() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -38,7 +38,7 @@ export function Signup() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
             <SubscriptionsIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -136,7 +136,7 @@ export function Signup() {
         </Box>
        
       </Container>
-    </ThemeProvider>
+    
   );
 }
 

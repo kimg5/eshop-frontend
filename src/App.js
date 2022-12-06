@@ -8,7 +8,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
-import Admin from "./pages/Admin";
+import Admin from "./pages/adminDashboard/Admin";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Signup from "./pages/Signup";
@@ -31,12 +31,10 @@ function App() {
     [primaryColor],
   );
 */
-  
 
   return (
     <ThemeContextProvider>
       <CssBaseline />
-      
 
       <Routes>
         <Route path="/" element={<MainLayout />}>
@@ -46,19 +44,14 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="signup" element={<Signup />} />
 
-          <Route
-            path="cart"
-            element={
-                <Cart />
-            }
-          />
+          <Route path="cart" element={<Cart />} />
 
           <Route
             path="admin"
             element={
-              <WithAuth role="admin">
-                <Admin />
-              </WithAuth>
+              // <WithAuth role="admin">
+              <Admin />
+              // </WithAuth>
             }
           />
         </Route>
