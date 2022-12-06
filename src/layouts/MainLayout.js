@@ -12,22 +12,18 @@ function MainLayout() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        height: "80vh",
+        height: "100vh",
+        py:3
       }}
     >
-      <Header />   
-      {/* <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm"> */}
-      <Container component="main" sx={{ mt: 8, mb: 2 }} >
-
-
-       <Outlet />
+      <Header />
+      <Container component="main" sx={{ mt: 8, mb: 2, margin: 8 }}>
+        <Outlet />
       </Container>
       <Box
         component="footer"
         sx={{
           py: 3,
-          px: 2,
-          mt: "auto",
           backgroundColor: (theme) => (theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800]),
         }}
       >
