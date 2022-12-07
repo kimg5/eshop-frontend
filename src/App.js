@@ -17,6 +17,7 @@ import SingleProductPage from "./pages/SingleProductPage";
 import WithAuth from "./components/WithAuth";
 import { ThemeContextProvider } from "./context/themeContext";
 import "./App.css";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   /*
@@ -47,6 +48,8 @@ function App() {
 
           <Route path="cart" element={<Cart />} />
           <Route path="product" element={<SingleProductPage />} />
+
+          <Route path="editprofile" element={<EditProfile />} />
 
           <Route
             path="admin"

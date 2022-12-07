@@ -16,7 +16,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
-export function Signup() {
+export function EditProfile() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -42,53 +42,48 @@ export function Signup() {
             <SubscriptionsIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Edit Your Profile
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              {/* <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid> */}
+             
               <Grid item xs={12}>
                 <TextField
-                  required
+                  disabled
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="{Email Address}"
                   name="email"
-                  autoComplete="email"
+                autoComplete="email"
+                inputProps={
+                  { readOnly: true, }
+                }
                 />
               </Grid>
 
               <Grid item xs={12}>
                 <TextField
-                  required
+                  disabled
                   fullWidth
                   id="username"
-                  label="Username"
+                  label="{Username}"
                   name="username"
                   autoComplete="username"
                 />
               </Grid>
-              <Grid item xs={12}>
+            
+            <Grid item xs={12}>
+                <TextField
+                  disabled
+                  fullWidth
+                  name="card"
+                  label="{Credit card}"
+                  type="text"
+                  id="card"
+                  autoComplete="card"
+                />
+            </Grid>
+            <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -96,7 +91,8 @@ export function Signup() {
                   label="Password"
                   type="password"
                   id="password"
-                  autoComplete="new-password"
+                autoComplete="new-password"
+                
                 />
               </Grid>
               <Grid item xs={12}>
@@ -110,17 +106,6 @@ export function Signup() {
                   autoComplete="confirmPassword"
                 />
             </Grid>
-            <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="card"
-                  label="Credit card"
-                  type="text"
-                  id="card"
-                  autoComplete="card"
-                />
-              </Grid>
               {/* <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
@@ -134,15 +119,9 @@ export function Signup() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Update Profile
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
+            
           </Box>
         </Box>
        
@@ -151,4 +130,4 @@ export function Signup() {
   );
 }
 
-export default Signup;
+export default EditProfile;
