@@ -15,7 +15,6 @@ const publicItems = [
 ];
 
 const adminItems = [{ title: "Admin", url: "/admin" }];
-
 const loggedInItems = [{ title: "Logout", url: "/logout" }];
 
 const loggedOutItems = [
@@ -37,8 +36,8 @@ const initialState = {
 
 export const AuthContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  const loginHandler = async (username, password) => {
+  
+ const loginHandler = async (username, password) => {
     dispatch({ type: POST_LOGIN_BEGIN });
     try {
       let content = await http.post(api_login_url, { username: username, password: password });
