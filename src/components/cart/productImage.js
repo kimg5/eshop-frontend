@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ProductImage = (props) => {
     return (
         <Wrapper>
-        <div className="title">
+        <div >
         <img src={props.url} alt={props.imageAlt} />
             </div>
             </Wrapper>

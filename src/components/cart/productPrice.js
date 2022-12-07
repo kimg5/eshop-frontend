@@ -6,7 +6,7 @@ const ProductPrice = (props) => {
         <Wrapper>
 
 {/* <div className="column center-container"> */}
-            <h5 > Price ${props.price}</h5>
+            <h5 >  ${props.price}</h5>
     {/* </div>; */}
         </Wrapper>    
     )
@@ -19,9 +19,9 @@ const ProductPrice = (props) => {
             .price {
               display: none;
             }
-            display: grid;
-            grid-template-columns: 200px auto auto;
-            grid-template-rows: 75px;
+            // display: grid;
+            // grid-template-columns: 200px auto auto;
+            // grid-template-rows: 75px;
             gap: 3rem 1rem;
             justify-items: center;
             margin-bottom: 3rem;
@@ -42,7 +42,7 @@ const ProductPrice = (props) => {
               object-fit: cover;
             }
             h5 {
-              font-size: 1rem;
+              font-size: 1.2rem;
               margin-bottom: 0;
             }
           

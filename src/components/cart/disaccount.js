@@ -1,4 +1,5 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import styled from 'styled-components'; 
 
 const Disaccount = (props) => 
                     <div className = "column discount">

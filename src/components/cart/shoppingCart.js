@@ -6,9 +6,6 @@ import Disaccount from "./disaccount";
 import CheckoutForm from "./checkoutForm";
 import data from "./data";
 
-
-
-
 class ShoppingCart extends React.Component {
             constructor(props, context) {
                 const products = data.products;
@@ -62,37 +59,36 @@ class ShoppingCart extends React.Component {
             
             render() {    
                 return (
-                    <Wrapper>
+                <Wrapper>
                     <div>                     
                         {this.state.productComponents}
-                        <div className="columns checkout">
-                            {/* <Disaccount /> */}
+                        <div >
                             <CheckoutForm total={this.state.total}/>
                         </div>
-                        </div>
-                        </Wrapper>
+                    </div>
+                </Wrapper>
                 )
             }
         }
         const Wrapper = styled.div`
-        display: none;
-        @media (min-width: 776px) {
-          display: block;
-          .content {
-            display: grid;
-            grid-template-columns: 100px 2fr 1fr 1fr 1fr;
-            justify-items: center;
-            column-gap: 2rem;
-            h5 {
-              color: var(--clr-grey-5);
-              font-weight: 400;
-            }
-          }
+        // display: none;
+        // @media (min-width: 776px) {
+        //   display: block;
+        //   .content {
+        //     display: grid;
+        //     // grid-template-columns: 100px 2fr 1fr 1fr 1fr;
+        //     justify-items: center;
+        //     column-gap: 2rem;
+        //     h5 {
+        //       color: var(--clr-grey-5);
+        //       font-weight: 400;
+        //     }
+        //   }
       
-          .columns checkout {
-            margin-left: auto; 
-        margin-right: 0;
-          }
+        //   .columns checkout {
+        //     margin-left: auto; 
+        // margin-right: 0;
+        //   }
           
         }
       `

@@ -4,11 +4,11 @@ const ProductQuantity = (props) => {
     return (
         <Wrapper>
             <div className="column center-container">
-        <h5 className='amount'> Quantity</h5>
-        <input id={props.id} className="quantity" type="number" name="quantity" min="1" max="100" 
-            defaultValue={props.quantity} 
-            onChange={props.changeQuantity} />
-     </div>;
+              <h5 className='amount'> Quantity</h5>
+              <input id={props.id} className="quantity" type="number" name="quantity" min="1" max="100" 
+                defaultValue={props.quantity} 
+                onChange={props.changeQuantity} />
+            </div>
         </Wrapper>
     )
 }
@@ -25,9 +25,12 @@ const Wrapper = styled.article`
 .price {
   display: none;
 }
-display: grid;
-grid-template-columns: 200px auto auto;
-grid-template-rows: 75px;
+.input{
+  width: 200px; 
+}
+// display: grid;
+// grid-template-columns: 200px auto auto;
+// grid-template-rows: 75px;
 gap: 3rem 1rem;
 justify-items: center;
 margin-bottom: 3rem;
@@ -48,7 +51,7 @@ img {
   object-fit: cover;
 }
 h5 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 0;
 }
 

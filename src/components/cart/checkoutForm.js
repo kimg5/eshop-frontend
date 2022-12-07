@@ -5,38 +5,77 @@ import TotalCost from "./totalCost";
 const CheckoutForm = (props) => {
     return (
         <Wrapper>
-            <div className="column submit-form">
+            <div >
+                {/* <div className="column submit-form"> */}
+                <article>
                             <div id="total">
                                 <TotalCost total ={props.total} />    
                             </div>
                             <div className="field is-grouped">
                                     <p className="control">
-                                        <button className="button is-dark" >
-                                            Back to shop
+                                        <button className="button is-link" >
+                                            Continue Shopping
                                         </button>                                        
                                     </p>
                                     <p className="control">
                                         <button className="button is-link" href="#">
-                                            Continue to checkout
+                                            Checkout
                                         </button>
                                     </p>
-                            </div>
+                    </div>
+                    </article>
                 </div>
         </Wrapper>
         
     )
 }
                 
-const Wrapper = styled.div`
+// const Wrapper = styled.div`
  
-      .column submit-form {
-        margin-left: auto; 
-        margin-right: 0;
-      }
+//       .column submit-form {
+//         margin-left: auto; 
+//         margin-right: 0;
+//       }
    
   
-`                
-
+// `                
+const Wrapper = styled.section`
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  // article {
+  //   // border: 1px solid var(--clr-grey-8);
+  //   // border-radius: var(--radius);
+  //   padding: 1.5rem 3rem;
+  // }
+  h4,
+  h5,
+  p {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+  p {
+    text-transform: capitalize;
+  }
+  h4 {
+    margin-top: 2rem;
+  }
+  @media (min-width: 776px) {
+    justify-content: flex-end;
+  }
+  .btn {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  button.is-dark{
+    background-color: #007bff; 
+  }
+  button.is-link{
+    background-color: #007bff; 
+  }
+`
 
 
 
