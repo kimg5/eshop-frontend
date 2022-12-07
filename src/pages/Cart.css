@@ -1,0 +1,26 @@
+   shoppingCardItemRoot {
+         display: "flex";
+         margin-top: 15;
+       }
+       shoppingCardItemDetails {
+         display: "flex";
+         flex-direction: "column";
+       }
+       shoppingCardItemContent {
+         flex: "1 0 auto"; 
+       }
+       shoppingCardItemCover {
+         width: 151; 
+        }
+        orderItemRoot {
+            position: "sticky";
+            /* top: "1rem", */
+            width: 275; 
+          }
+        
+          orderItemTitle {
+            font-size: 14; 
+          }
+          orderItemPos {
+            margin-bottom: 12; 
+          }
