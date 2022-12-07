@@ -7,11 +7,12 @@ import MenuItem from "@mui/material/MenuItem";
 import AddIcon from "@mui/icons-material/Add";
 import Avatar from "@mui/material/Avatar";
 
-function ColorIconGroup({ title, colors }) {
+function ColorIconGroup({ title, colors,handler }) {
   const [name, setName] = React.useState("All");
 
   const handleChange = (event) => {
     setName(event.target.value);
+    handler({color: event.target.value});
   };
   return (
     <div>

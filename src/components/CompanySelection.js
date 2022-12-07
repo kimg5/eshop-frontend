@@ -5,11 +5,12 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
-function CompanySelection({ title, companies }) {
+function CompanySelection({ title, companies,handler }) {
   const [name, setName] = React.useState("All");
 
   const handleChange = (event) => {
     setName(event.target.value);
+    handler({company: event.target.value})
   };
   return (
     <FormControl>

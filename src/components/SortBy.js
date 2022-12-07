@@ -6,11 +6,12 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-function SortBy() {
+function SortBy({handler}) {
   const [order, setOrder] = React.useState("");
 
   const handleChange = (event) => {
     setOrder(event.target.value);
+    handler(event.target.value);
   };
   return (
 

@@ -7,10 +7,12 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
 
-function CategoryRadioGroup({ title, categories }) {
+function CategoryRadioGroup({ title, categories,handler }) {
+  
   const [categoryValue, setCategoryValue] = React.useState("All");
   const handleCategoryChange = (event) => {
     setCategoryValue(event.target.value);
+    handler({category:event.target.value})
   };
 
   return (

@@ -14,27 +14,46 @@ import SearchField from "../components/SearchField";
 
 import FilterContext from "../context/filterContext";
 
-function Filters() {
+let filters = {
+  searchKey: "",
+  category: "All",
+  company: "All",
+  color: "All",
+  price: 0,
+  freeshipping: false,
+};
+
+ function Filters({filterHandler}) {
+  
+  const handler = (filter) => {
+    filters = { ...filters, ...filter };
+    return filters;
+  };
+
   const meta = React.useContext(FilterContext);
   const maxPrice = 10000;
- 
+
   return (
     <Stack spacing={1}>
-      <SearchField />
+      <SearchField handler={handler} />
 
-      <CategoryRadioGroup title="Category" categories={meta.categories} />
-      <CompanySelection title="Company" companies={meta.companies} />
-      <ColorIconGroup title="Color" colors={meta.colors} />
-      <PriceSlider title="Price" maxPrice={maxPrice} />
+      <CategoryRadioGroup title="Category" categories={meta.categories} handler={handler} />
+      <CompanySelection title="Company" companies={meta.companies} handler={handler} />
+      <ColorIconGroup title="Color" colors={meta.colors} handler={handler} />
+      <PriceSlider title="Price" maxPrice={maxPrice} handler={handler} />
 
       <Grid container spacing={1} justifyContent="center" alignItems="center">
         <Grid xs={10}>Free Shipping</Grid>
         <Grid xs={2}>
-          <Checkbox />
+          <Checkbox
+            onChange={(event) => {
+              handler({ freeshipping: event.target.checked });
+            }}
+          />
         </Grid>
       </Grid>
-      <Button variant="contained" color="error">
-        Clear Filters
+      <Button variant="contained" color="secondary" onClick={()=>{filterHandler(filters)}}>
+        Submit
       </Button>
     </Stack>
   );

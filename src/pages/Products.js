@@ -5,33 +5,42 @@ import { Divider } from "@mui/material";
 import Filters from "./Filters";
 import GridView from "../components/GridView";
 import SortBy from "../components/SortBy";
-
-import reducer from "../reducers/productReducer";
-import { GET_PRODUCTS_SEARCH } from "../actions";
-
-import { rows } from "./productsData";
+import http from "../utils/http";
+import { api_search_url } from "../utils/constants";
 
 const initialState = {
   isLoading: false,
-  products:[]
+  products: [],
+};
+
+const sortKey = {
+  sort: "",
 };
 
 function Products() {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
-  
+  const [state, setState] = React.useState(initialState);
+
+  const sortHandler = (sort) => {
+    sortKey.sort = sort;
+  };
+
+  const filterHandler = (filters) => {
+    console.log("filterHandler");
+    http.post(api_search_url, { ...filters, ...sortKey }).then((resp) => {
+      setState({ products: resp, isLoading: false });
+    });
+  };
+
   return (
     <Grid container spacing={2} width={"90vw"}>
       <Grid item xs={2}>
-        <Filters />
+        <Filters filterHandler={filterHandler} />
       </Grid>
       <Grid item xs={10} sx={{ pl: 6 }}>
         <Divider textAlign="right">
-          <SortBy />
+          <SortBy handler={sortHandler} />
         </Divider>
-        {
-         rows ? <GridView style={{ space: 2, columns: 3, imageHeight: 180 }} rows={state.products} />
-              : <div>No products</div> 
-        }
+        {state.products ? <GridView style={{ space: 2, columns: 3, imageHeight: 180 }} rows={state.products} /> : <div>No products</div>}
       </Grid>
     </Grid>
   );

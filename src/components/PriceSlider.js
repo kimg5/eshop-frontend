@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 
-function PriceSlider({title,maxPrice}) {
+function PriceSlider({title,maxPrice,handler}) {
    const [value, setValue] = React.useState(0);
 
   const valueLabelFormat = (value) => {
@@ -15,6 +15,10 @@ function PriceSlider({title,maxPrice}) {
     if (typeof newValue === "number") {
       setValue(newValue);
     }
+  };
+  const handleCommitted = (event, newValue) => {
+    console.log(`Committed ${newValue}`);
+    handler({price:newValue});
   };
 
   return (
@@ -31,9 +35,7 @@ function PriceSlider({title,maxPrice}) {
           step={1}
           max={maxPrice}
           onChange={handleSliderChange}
-          onChangeCommitted={() => {
-            console.log("commit");
-          }}
+          onChangeCommitted={handleCommitted}
           sx={{ width: 260 }}
         />
       </Box>
