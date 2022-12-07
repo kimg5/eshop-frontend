@@ -9,7 +9,38 @@ import {
 } from '../actions'
 
 const getLocalStorage = () => {
-  let cart = localStorage.getItem('cart')
+  // let cart = localStorage.getItem('cart')
+  let cart = 
+    [
+      {
+        _id: "6386bf0330dc026263ee1d3d",
+        image:
+          "https://v5.airtableusercontent.com/v1/11/11/1669651200000/ZU2tuvTyDY9D_OFFgZX2yQ/jSrlUsI7OdyCoGPVq8tdH2rdnuyLbRzrMqWhd87SjPUCD9Z0awnP36ejdO1ZHkABC3ZxK7GGJiBJRqf4VBlnqA/sEF2wZ6gNdIH2IkJKk-oUK46JFBZ_4KvXi80sAtSL1M",
+        
+        name: "accent chair",
+        color: "black",
+        amount: "1",
+      },
+      {
+        _id: "6386bf0330dc026263ee1d3d",
+        image:
+          "https://v5.airtableusercontent.com/v1/11/11/1669651200000/ZU2tuvTyDY9D_OFFgZX2yQ/jSrlUsI7OdyCoGPVq8tdH2rdnuyLbRzrMqWhd87SjPUCD9Z0awnP36ejdO1ZHkABC3ZxK7GGJiBJRqf4VBlnqA/sEF2wZ6gNdIH2IkJKk-oUK46JFBZ_4KvXi80sAtSL1M",
+        
+        name: "accent chair",
+        color: "black",
+        amount: "1",
+      },
+      {
+        _id: "6386bf0330dc026263ee1d3d",
+        image:
+          "https://v5.airtableusercontent.com/v1/11/11/1669651200000/ZU2tuvTyDY9D_OFFgZX2yQ/jSrlUsI7OdyCoGPVq8tdH2rdnuyLbRzrMqWhd87SjPUCD9Z0awnP36ejdO1ZHkABC3ZxK7GGJiBJRqf4VBlnqA/sEF2wZ6gNdIH2IkJKk-oUK46JFBZ_4KvXi80sAtSL1M",
+        
+        name: "accent chair",
+        color: "black",
+        amount: "1",
+      },
+      
+  ];
   if (cart) {
     return JSON.parse(localStorage.getItem('cart'))
   } else {
