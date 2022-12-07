@@ -58,7 +58,7 @@ const Wrapper = styled.section`
     text-transform: capitalize;
   }
   h4 {
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
   @media (min-width: 776px) {
     justify-content: flex-end;

@@ -12,7 +12,7 @@ const TotalCost = (props) => {
     
 }
 const Wrapper = styled.section`
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   article {
@@ -30,7 +30,7 @@ const Wrapper = styled.section`
     text-transform: capitalize;
   }
   h4 {
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
   @media (min-width: 776px) {
     justify-content: flex-end;
