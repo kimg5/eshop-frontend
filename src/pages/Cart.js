@@ -4,7 +4,6 @@ import { useCartContext } from '../context/cartContext'
 import { Link } from 'react-router-dom'
 import { CartContent } from '../components/CardContent'
 import ShoppingCart from '../components/cart/shoppingCart';
-import ShoppingCartDemo from '../components/ShoppingCartDemo';
 import CartColumns from '../components/CartColumns';
 
 export function Cart() {

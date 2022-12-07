@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { useCartContext } from '../context/cartContext'
 import { Link } from 'react-router-dom'
 import CartColumns from './CartColumns'
-import CartItem from './CartItem'
-import CartTotals from './CartTotals'
+import CartItem from './will-delete/CartItem'
+import CartTotals from './will-delete/CartTotals'
 export const CartContent = () => {
   const { cart, clearCart } = useCartContext()
 
