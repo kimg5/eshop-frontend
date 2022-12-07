@@ -8,6 +8,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import reducer from "../reducers/productReducer";
 import { GET_PRODUCTS_SEARCH } from "../actions";
 
+const initialState = {
+  isLoading: false,
+  products:[]
+};
+
 function SearchField(){
     const [state, dispatch] = React.useReducer(reducer, initialState);
 
@@ -15,8 +20,8 @@ function SearchField(){
 
     const search = () => {
         console.log('Search : ' + searchRef.current.value)
-        dispatch({type: GET_PRODUCTS_SEARCH,}
-    }    
+        dispatch({type: GET_PRODUCTS_SEARCH});
+    };    
     return (
         <Paper
         component="form"
