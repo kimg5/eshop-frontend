@@ -14,7 +14,7 @@ export default function Admin() {
   return (
     <>
       {/* <Header page="home" /> */}
-      <div className="userList">
+      <div>
         <UserList rows={userList} />{" "}
         {/* define userlist in another component and import it */}
       </div>

@@ -82,7 +82,7 @@ export default function UserList(props) {
             <th scope="col">Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className=" text-center">
           {userList.map((user, i) => (
             <tr key={user._id}>
               <th scope="row">{++i}</th>
