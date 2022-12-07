@@ -4,7 +4,6 @@ const CartColumns = () => {
   return (
     <Wrapper>
       <div className='content'>
-      <h5>Image</h5>
         <h5>item</h5>
         <h5>Quantity</h5>
         <h5>Price</h5>
@@ -17,17 +16,17 @@ const CartColumns = () => {
 }
 
 const Wrapper = styled.div`
-  display: none;
+display: none;
   @media (min-width: 776px) {
     display: block;
     .content {
       display: grid;
-      grid-template-columns: 100px 2fr 1fr 1fr 1fr;
+      grid-template-columns: 316px 1fr 1fr 1fr ;
       justify-items: center;
-      column-gap: 2rem;
+      column-gap: 1rem;
       h5 {
-        color: var(--clr-grey-5);
-        font-weight: 400;
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: 800;
       }
     }
 
@@ -35,7 +34,10 @@ const Wrapper = styled.div`
       width: 2rem;
       height: 2rem;
     }
-    
+    hr {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
   }
 `
 

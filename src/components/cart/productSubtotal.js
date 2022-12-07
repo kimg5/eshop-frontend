@@ -1,11 +1,11 @@
-import { GridPanelWrapper } from "@mui/x-data-grid";
+// import { GridPanelWrapper } from "@mui/x-data-grid";
 import React, { Component } from "react";
 import styled from 'styled-components'; 
 
 const ProductSubtotal = (props) => { 
     return (
         <Wrapper>
-          <h5 > Subtotal ${props.totalCost}</h5>
+          <h5 > ${props.totalCost}</h5>
         </Wrapper>  
     )
 }
@@ -17,9 +17,9 @@ const Wrapper = styled.article`
 .price {
   display: none;
 }
-display: grid;
-grid-template-columns: 200px auto auto;
-grid-template-rows: 75px;
+// display: grid;
+// grid-template-columns: 200px auto auto;
+// grid-template-rows: 75px;
 gap: 3rem 1rem;
 justify-items: center;
 margin-bottom: 3rem;
@@ -40,7 +40,7 @@ img {
   object-fit: cover;
 }
 h5 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 0;
 }
 

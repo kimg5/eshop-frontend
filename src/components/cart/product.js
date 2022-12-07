@@ -10,15 +10,20 @@ import styled from 'styled-components';
 const Product = (props) => { 
     return (
         <Wrapper>
-            <div className="columns product-row">
-            {/* <div className="title"> */}
-                        <ProductImage url={props.image} />
-                    <ProductDescription description={props.description} code={props.code} />
-                    {/* </div> */}
-                        <ProductQuantity id={props.code} changeQuantity={props.changeQuantity} quantity={props.quantity} />
-                        <ProductPrice price={props.price} />
-                        <ProductSubtotal totalCost={props.totalCost} />
-                    </div>
+        <div className="title">
+          {/* <img src={props.image} alt={props.name} /> */}
+          <img src={"https://source.unsplash.com/random"} alt={props.name} />
+            <div>
+                <h5 className='name'>{props.name}</h5>
+                <p className='color'> {props.name}{/* <span style={{ background: color }} /> */}</p>
+                <p className='color'> Code :{props.code} </p>
+                <h5 className='price-small'>${props.price}</h5>
+            </div>
+        </div>
+              <ProductQuantity id={props.code} changeQuantity={props.changeQuantity} quantity={props.quantity} />
+              <ProductPrice price={props.price} />
+              <ProductSubtotal totalCost={props.totalCost} />
+    
              </Wrapper>
     )
 }
@@ -53,14 +58,14 @@ const Wrapper = styled.article`
     object-fit: cover;
   }
   h5 {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     margin-bottom: 0;
   }
 
   .color {
-    color: var(--clr-grey-5);
-    font-size: 0.75rem;
-    letter-spacing: var(--spacing);
+    // color: var(--clr-grey-5);
+    font-size: 1.2rem;
+    // letter-spacing: var(--spacing);
     text-transform: capitalize;
     margin-bottom: 0;
     display: flex;
@@ -86,6 +91,9 @@ const Wrapper = styled.article`
       font-size: 0.75rem;
     }
     h2 {
+      font-size: 1rem;
+    }
+    p {
       font-size: 1rem;
     }
   }
