@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Button from "@mui/material/Button";
 import { CssBaseline } from "@mui/material";
 
 import MainLayout from "./layouts/MainLayout";
@@ -20,20 +19,6 @@ import "./App.css";
 import EditProfile from "./pages/EditProfile";
 
 function App() {
-  /*
-  const defaultColor = '#f44336';
-  const [primaryColor, setPrimaryColor] = React.useState(defaultColor);
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          primary: { main: primaryColor },
-        },
-      }),
-    [primaryColor],
-  );
-*/
-
   return (
     <ThemeContextProvider>
       <CssBaseline />
@@ -54,11 +39,12 @@ function App() {
           <Route
             path="admin"
             element={
-              // <WithAuth role="admin">
+               <WithAuth role="admin">
               <Admin />
-              // </WithAuth>
+               </WithAuth>
             }
           />
+
         </Route>
       </Routes>
     </ThemeContextProvider>

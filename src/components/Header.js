@@ -10,24 +10,48 @@ import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Unstable_Grid2";
 
+import Logout from "./Logout";
+
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/authContext";
 import ThemeContext from "../context/themeContext";
 
 function Header() {
+  const [isLogout, setIsLogout] = React.useState(false);
+
   const navigate = useNavigate();
-  const { navItems } = React.useContext(AuthContext);
+  const { logout,navItems } = React.useContext(AuthContext);
   const { changeTheme } = React.useContext(ThemeContext);
+
+  const closePopup = () =>{
+     setIsLogout(false);
+  }
+
+  const logoutHandler = () => {
+     logout();
+     navigate("/", { replace: true });
+  }  
 
   const go = (url) => {
     try {
-      console.log(url);
-      navigate(url, { replace: true });
+      if (url === "/logout") {
+        console.log('logout');
+        setIsLogout(true);
+      } else navigate(url, { replace: true });
     } catch (error) {
       console.log(error);
     }
   };
 
+    return (
+      <>
+        <Logout isLogout={isLogout} closePopup={closePopup} logout={logoutHandler} />
+        <HeaderBar changeTheme={changeTheme} navItems={navItems} go={go} />
+      </>
+    )
+}
+
+function HeaderBar({ changeTheme, navItems, go }) {
   return (
     <AppBar component="nav">
       <Toolbar>
@@ -57,5 +81,4 @@ function Header() {
     </AppBar>
   );
 }
-
 export default Header;

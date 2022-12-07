@@ -19,7 +19,7 @@ const LoginForm = ({ handleSubmit }) => {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+          <Avatar sx={{ m: 1, backgroundColor: "primary.main" }}>
             <LoginIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
