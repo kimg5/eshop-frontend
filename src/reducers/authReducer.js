@@ -19,16 +19,15 @@ const authReducer = (state, action) => {
     changedState.token = token;
     changedState.role = role;
     changedState.isLoggedIn = true;
-
-    changedState.navItems = [...changedState.publicItems, ...changedState.loggedInItems];
-
+    
     if (role === "admin") {
-      changedState.navItems = [...changedState.navItems, ...changedState.adminItems];
-    }
-
+      changedState.navItems = [...changedState.publicItems, ...changedState.adminItems,...changedState.loggedInItems];
+    }else changedState.navItems = [...changedState.publicItems, ...changedState.loggedInItems];
+   
     sessionStorage.setItem("token",token);
     sessionStorage.setItem("role",role);
    
+    
     return changedState;
   
   } else if (action.type === POST_LOGIN_ERROR) {
