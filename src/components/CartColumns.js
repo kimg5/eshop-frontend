@@ -2,16 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 const CartColumns = () => {
   return (
-    <div>
+    <Wrapper>
       <div className='content'>
+      <h5>Image</h5>
         <h5>item</h5>
-        <h5>price</h5>
-        <h5>quantity</h5>
+        <h5>Quantity</h5>
+        <h5>Price</h5>
         <h5>subtotal</h5>
         <span></span>
       </div>
       <hr />
-    </div>
+    </Wrapper>
   )
 }
 
@@ -21,9 +22,9 @@ const Wrapper = styled.div`
     display: block;
     .content {
       display: grid;
-      grid-template-columns: 316px 1fr 1fr 1fr auto;
+      grid-template-columns: 100px 2fr 1fr 1fr 1fr;
       justify-items: center;
-      column-gap: 1rem;
+      column-gap: 2rem;
       h5 {
         color: var(--clr-grey-5);
         font-weight: 400;
@@ -34,10 +35,7 @@ const Wrapper = styled.div`
       width: 2rem;
       height: 2rem;
     }
-    hr {
-      margin-top: 1rem;
-      margin-bottom: 3rem;
-    }
+    
   }
 `
 

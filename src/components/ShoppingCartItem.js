@@ -26,6 +26,7 @@ export default function ShoppingCartItem() {
   // const classes = useStyles();
   const [itemCount, setItemCount] = React.useState(1);
   const price = 105.99; 
+ 
   return (
     <Paper
     sx={{

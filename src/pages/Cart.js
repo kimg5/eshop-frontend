@@ -3,34 +3,43 @@ import './Cart.css';
 import { useCartContext } from '../context/cartContext'
 import { Link } from 'react-router-dom'
 import { CartContent } from '../components/CardContent'
-import ShoppingCart from '../components/ShoppingCart';
+import ShoppingCart from '../components/cart/shoppingCart';
 import ShoppingCartDemo from '../components/ShoppingCartDemo';
+import CartColumns from '../components/CartColumns';
 
 export function Cart() {
-  // const { cart } = useCartContext()
-
-      
-  // ];
-  // if (cart.length < 1) {
-  //   return (
-  //     <div className='page-100'>
-  //       <div className='empty'>
-  //         <h2>Your cart is empty</h2>
-  //         <Link to='/products' className='btn'>
-  //           fill it
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   )
-  // }
+  
   return (
+    
     <main>
-      {/* <div className='page'>
-        <CartContent></CartContent>
-      </div> */}
-      {/* shopping cart version 2 */}
+      <CartColumns />
       <ShoppingCart />
-      {/* <ShoppingCartDemo /> */}
+       {/* <<section class="section products-table">
+            <div class="columns table-header">
+                <div class="column">
+                    Image
+                </div>
+                <div class="column is-half">
+                    Product Description
+                </div>
+                <div class="column">
+                    Quantity
+                </div>
+                <div class="column">
+                    Price
+                </div>
+                <div class="column">
+                    Total
+                </div>
+            </div> 
+            <div id="shopping_cart">
+            <ShoppingCart />
+            </div>
+        </section>> */}
+      
+      {/* shopping cart version 2 */}
+     
+      
       </main>
   )
 }
