@@ -12,78 +12,123 @@ import  Stars  from "../components/Stars";
 import  PageHero  from "../components/PageHero";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+import historyImg from "../assets/historyPhoto.jpg";
+
 const SingleProductPage = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const {
-    single_product_loading: loading,
-    single_product_error: error,
-    single_product: product,
-    fetchSingleProduct,
-  } = useProductsContext();
+//   const { id } = useParams();
+//   const navigate = useNavigate();
+//   const {
+//     single_product_loading: loading,
+//     single_product_error: error,
+//     single_product: product,
+//     fetchSingleProduct,
+//   } = useProductsContext();
 
-  useEffect(() => {
-    fetchSingleProduct(`${url}${id}`);
-    // eslint-disable-next-line
-  }, [id]);
-  useEffect(() => {
-    if (error) {
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
-    }
-    // eslint-disable-next-line
-  }, [error]);
-  if (loading) {
-    return <Loading />;
-  }
-  if (error) {
-    return <Error />;
-  }
+//   useEffect(() => {
+//     fetchSingleProduct(`${url}${id}`);
+//     // eslint-disable-next-line
+//   }, [id]);
+//   useEffect(() => {
+//     if (error) {
+//       setTimeout(() => {
+//         navigate("/");
+//       }, 3000);
+//     }
+//     // eslint-disable-next-line
+//   }, [error]);
+//   if (loading) {
+//     return <Loading />;
+//   }
+//   if (error) {
+//     return <Error />;
+//   }
 
-  const {
-    name,
-    price,
-    description,
-    stock,
-    stars,
-    reviews,
-    id: sku,
-    company,
-    images,
-  } = product;
+    const product={name:"chair", description:"description"};
+    const stock=20;
+
+//   const {
+//     name,
+//     price,
+//     description,
+//     stock,
+//     stars,
+//     reviews,
+//     id: sku,
+//     company,
+//     images,
+//   } = product; 
   return (
-    <Wrapper>
-      <PageHero title={name} product />
+    
+     <Wrapper>
+      
       <div className="section section-center page">
         <Link to="/products" className="btn">
           back to products
         </Link>
         <div className="product-center">
-          <ProductImages images={images} />
+        <img src={historyImg} alt="history phot" />
+        { /* <ProductImages images={images} />*/}
           <section className="content">
-            <h2>{name}</h2>
-            <Stars stars={stars} reviews={reviews} />
-            <h5 className="price">{formatPrice(price)}</h5>
-            <p className="desc">{description}</p>
+            <h2>Chair</h2>
+          {/*  <Stars stars={stars} reviews={reviews} />*/}
+            <h5 className="price">{formatPrice(5000)}</h5>
+            <p className="desc">description</p>
             <p className="info">
               <span>Available : </span>
               {stock > 0 ? "In stock" : "out of stock"}
-            </p>
+             </p> 
             <p className="info">
               <span>SKU :</span>
-              {sku}
+              Sku
             </p>
             <p className="info">
               <span>Brand :</span>
-              {company}
+              company
             </p>
             <hr />
-            {stock > 0 && <AddToCart product={product} />}
+            <Link to="/" className="btn">
+            Add to Cart
+          </Link>
+            
+           {/*  {stock > 0 && <AddToCart product={product} />} */}
           </section>
         </div>
       </div>
     </Wrapper>
+    
+
+    // <Wrapper>
+    //   <PageHero title={name} product />
+    //   <div className="section section-center page">
+    //     <Link to="/products" className="btn">
+    //       back to products
+    //     </Link>
+    //     <div className="product-center">
+    //       <ProductImages images={images} />
+    //       <section className="content">
+    //         <h2>{name}</h2>
+    //         <Stars stars={stars} reviews={reviews} />
+    //         <h5 className="price">{formatPrice(price)}</h5>
+    //         <p className="desc">{description}</p>
+    //         <p className="info">
+    //           <span>Available : </span>
+    //           {stock > 0 ? "In stock" : "out of stock"}
+    //         </p>
+    //         <p className="info">
+    //           <span>SKU :</span>
+    //           {sku}
+    //         </p>
+    //         <p className="info">
+    //           <span>Brand :</span>
+    //           {company}
+    //         </p>
+    //         <hr />
+    //         {stock > 0 && <AddToCart product={product} />}
+    //       </section>
+    //     </div>
+    //   </div>
+    // </Wrapper>
   );
 };
 
