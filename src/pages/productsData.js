@@ -1,4 +1,4 @@
-export const productsData = [
+export const rows = [
   {
     _id: "6386bf0330dc026263ee1d3d",
     name: "accent chair",

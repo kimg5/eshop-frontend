@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useEffect } from "react";
+import React, { useReducer, useCallback } from "react";
 import reducer from "../reducers/authReducer";
 import http from "../utils/http";
 import { api_login_url } from "../utils/constants";
