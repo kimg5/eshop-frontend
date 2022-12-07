@@ -2,19 +2,14 @@ import { GridPanelWrapper } from "@mui/x-data-grid";
 import React, { Component } from "react";
 import styled from 'styled-components'; 
 
-const ProductTotalCost = (props) => { 
+const ProductSubtotal = (props) => { 
     return (
         <Wrapper>
-
-{/* <div className="column center-container"> */}
-<h5 > Subtotal ${props.totalCost}</h5>
-    {/* </div>; */}
+          <h5 > Subtotal ${props.totalCost}</h5>
         </Wrapper>  
     )
 }
-    // <div className="column center-container">
-    //     <span className="mobile-table-heading"> Subtotal</span> ${props.totalCost}
-    // </div>;
+   
 const Wrapper = styled.article`
 .subtotal {
   display: none;
@@ -150,4 +145,4 @@ h5 {
   }
 }
 `
-export default ProductTotalCost;
+export default ProductSubtotal;
