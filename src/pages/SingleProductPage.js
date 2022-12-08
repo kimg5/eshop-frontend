@@ -3,7 +3,6 @@ import React  from "react";
 import { formatPrice } from "../utils/helpers";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import historyImg from "../assets/historyPhoto.jpg";
 
 const SingleProductPage = ({closeHandler,row}) => {
    React.useEffect(() => {
