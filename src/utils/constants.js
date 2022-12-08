@@ -4,7 +4,7 @@ export const api_register_url = api_url + '/auth/register';
 
 export const api_products_url = api_url + '/products';
 export const api_products_detail_url = api_products_url + "/detail/";
-
+export const api_products_featured_url = api_products_url + "/featured";
 
 export const api_filters_url = api_url + '/filters';
 export const api_search_url = api_url + "/products/search";

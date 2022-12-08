@@ -7,9 +7,7 @@ import GridView from "../components/GridView";
 import SortBy from "../components/SortBy";
 import http from "../utils/http";
 import { api_search_url, api_products_detail_url } from "../utils/constants";
-import Slide from "@mui/material/Slide";
-import Dialog from "@mui/material/Dialog";
-import SingleProductPage from "./SingleProductPage";
+import ProductDetail from './ProductDetail'
 
 function Products() {
   const [detail, setDetail] = React.useState({isOpen:false,row:{}});
@@ -68,29 +66,6 @@ function ProductList({detailHandler}) {
         )}
       </Grid>
     </Grid>
-  );
-}
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
-
-function ProductDetail({detail,closeHandler}) {
-  const [open, setOpen] = React.useState(false);
- 
-  const handleClose = () => {
-    setOpen(false);
-    closeHandler(detail.row);
-  };
-
-  React.useEffect(() => {
-     setOpen(detail.isOpen);
-  }, [detail.isOpen]);
-
-  return (
-    <Dialog fullScreen open={open} TransitionComponent={Transition}>
-      <SingleProductPage closeHandler={handleClose} row={detail.row}/>
-    </Dialog>
   );
 }
 
