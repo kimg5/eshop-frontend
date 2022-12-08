@@ -1,16 +1,9 @@
-//npm install axios
 import React  from "react";
 import { formatPrice } from "../utils/helpers";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const SingleProductPage = ({closeHandler,row}) => {
-   React.useEffect(() => {
-    console.log("single product useEffect");
-    console.log(row);
-   }, [row]);
- 
-    
+const SingleProductPage = ({closeHandler,row,addToCartHandler}) => {
   return (
      <Wrapper>
       <div className="section section-center page">
@@ -38,7 +31,7 @@ const SingleProductPage = ({closeHandler,row}) => {
               {row.brand}
             </p>
             <hr />
-            <Link to="/" className="btn">
+            <Link className="btn" onClick={()=>{addToCartHandler(row)}}>
             Add to Cart
           </Link>
             
