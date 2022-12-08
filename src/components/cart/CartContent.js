@@ -41,5 +41,9 @@ const Wrapper = styled.section`
     // background: var(--clr-black);
     background: #2e7d32;
   }
+  .section section-center{
+    padding-left: 5px; 
+    padding-right: 5px;
+  }
 `
 export default CartContent;

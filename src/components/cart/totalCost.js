@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import styled from 'styled-components'; 
 
 const TotalCost = (props) => {
+  const shipping = 5.99; 
+  const tax = (props.total * 0.13).toFixed(2); 
+  const totalCost = parseFloat(props.total) + parseFloat(shipping) + parseFloat(tax); 
     return (
         <Wrapper>
             <article>
-                <h4 className="total">Total: ${props.total} </h4>
+          <h5 className="total">Subtotal: ${props.total} </h5>
+          <h5>Shipping Cost: { shipping}</h5>
+          <h5 className="total">Tax: ${tax} </h5>
+          <h4 className="total">Total: ${totalCost.toFixed(2)} </h4>
                 </article>
         </Wrapper>
     )

@@ -9,7 +9,7 @@ const CheckoutForm = (props) => {
             <div >
                 {/* <div className="column submit-form"> */}
                 <article>
-                      <div id="total">
+                      <div className="total">
                                 <TotalCost total ={props.total} />    
                             </div>
                             <div className="field is-grouped">
@@ -29,15 +29,7 @@ const CheckoutForm = (props) => {
     )
 }
                 
-// const Wrapper = styled.div`
- 
-//       .column submit-form {
-//         margin-left: auto; 
-//         margin-right: 0;
-//       }
-   
-  
-// `                
+               
 const Wrapper = styled.section`
   margin-top: 3rem;
   display: flex;
@@ -73,6 +65,9 @@ const Wrapper = styled.section`
   }
   button.is-link{
     background-color: #007bff; 
+  }
+  .total{
+    width: 300px; 
   }
 `
 
