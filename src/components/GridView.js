@@ -17,7 +17,7 @@ const ItemContent = ({ name, price }) => {
   );
 };
 
-function GridView({ style, rows }) {
+function GridView({ style, rows, detailHandler }) {
   const space = style.space;
   const columns = style.columns;
   const imageHeight = style.imageHeight;
@@ -28,7 +28,7 @@ function GridView({ style, rows }) {
       {rows.map((row) => {
         return (
           <Grid item xs={columns}>
-            <Card sx={{ width: width }} raised={true}>
+            <Card sx={{ width: width }} raised={true} onClick={() =>{detailHandler(row)}}>
               <CardActionArea>
                 <CardMedia component="img" height={imageHeight} src={row.image} />
                 <CardContent>

@@ -33,7 +33,7 @@ function App() {
 
           <Route path="cart" element={<Cart />} />
           <Route path="product" element={<SingleProductPage />} />
-
+          
           <Route path="editprofile" element={<EditProfile />} />
 
           <Route

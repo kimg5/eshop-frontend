@@ -35,7 +35,6 @@ function Header() {
   const go = (url) => {
     try {
       if (url === "/logout") {
-        console.log('logout');
         setIsLogout(true);
       } else navigate(url, { replace: true });
     } catch (error) {
