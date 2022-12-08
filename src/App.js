@@ -14,7 +14,6 @@ import Signup from "./pages/Signup";
 
 import WithAuth from "./components/WithAuth";
 import { ThemeContextProvider } from "./context/themeContext";
-import "./App.css";
 import EditProfile from "./pages/EditProfile";
 
 function App() {
