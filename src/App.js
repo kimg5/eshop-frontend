@@ -15,6 +15,8 @@ import Signup from "./pages/Signup";
 import WithAuth from "./components/WithAuth";
 import { ThemeContextProvider } from "./context/themeContext";
 import EditProfile from "./pages/EditProfile";
+import SingleProductPage from "./pages/SingleProductPage";
+
 
 function App() {
   return (
@@ -31,7 +33,7 @@ function App() {
           
           <Route path="cart" element={<Cart />} />
           <Route path="editprofile" element={<EditProfile />} />
-
+          <Route path="product" element={<SingleProductPage />} />
           <Route
             path="admin"
             element={

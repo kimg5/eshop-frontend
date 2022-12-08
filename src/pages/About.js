@@ -12,7 +12,7 @@ import historyImg from "../assets/historyPhoto.jpg";
 const AboutPage = () => {
   return (
     <main className="page ">
-      <PageHero title="about" />
+      
       <Wrapper className="page section ">
       
         {" "}
@@ -21,7 +21,6 @@ const AboutPage = () => {
         <article>
           <div className="title">
             <h2>Our Story</h2>
-            <div className="underline"></div>
           </div>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
@@ -44,7 +43,6 @@ const AboutPage = () => {
         <article>
           <div className="title">
             <h2>Mission</h2>
-            <div className="underline"></div>
           </div>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
@@ -67,7 +65,6 @@ const AboutPage = () => {
         <article>
           <div className="title">
             <h2>History</h2>
-            <div className="underline"></div>
           </div>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat

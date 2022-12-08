@@ -14,7 +14,7 @@ const SingleProductPage = ({closeHandler,row}) => {
   return (
      <Wrapper>
       <div className="section section-center page">
-        <Link onClick={closeHandler} className="btn">
+        <Link onClick={closeHandler} className="btn" variant="contained" color="success">
           back to products
         </Link>
         <div className="product-center">
@@ -38,7 +38,7 @@ const SingleProductPage = ({closeHandler,row}) => {
               {row.brand}
             </p>
             <hr />
-            <Link to="/" className="btn">
+            <Link to="/" className="btn" variant="contained" color="success">
             Add to Cart
           </Link>
             
