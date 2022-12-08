@@ -9,6 +9,9 @@ export const api_products_featured_url = api_products_url + "/featured";
 export const api_filters_url = api_url + '/filters';
 export const api_search_url = api_url + "/products/search";
 
+export const api_admin_users_url = api_url + '/admin/users';
+export const api_admin_user_url = api_url + '/admin/user/';
+
 export const products_url = 'https://course-api.com/react-store-products';
 
 export const single_product_url = `https://course-api.com/react-store-single-product?id=`;

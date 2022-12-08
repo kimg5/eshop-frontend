@@ -40,7 +40,8 @@ const http = {
     post : post,
     put: put,
     patch:patch,
-    delete:remove
+    delete:remove,
+    request:request
 }
 
 export default http;

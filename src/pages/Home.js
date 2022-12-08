@@ -24,7 +24,6 @@ function Home() {
   const [detail, setDetail] = React.useState({isOpen:false,row:{}});
   
   const detailHandler = (row) => {
-    console.log("gotDetail");
     setIsLoading(true);
     http.get(api_products_detail_url + row._id).then((resp) => {
       setDetail({isOpen:true,row:resp});
