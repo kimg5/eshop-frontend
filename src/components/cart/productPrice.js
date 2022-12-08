@@ -12,7 +12,7 @@ const ProductPrice = (props) => {
     )
 }
             
-            const Wrapper = styled.article`
+const Wrapper = styled.article`
             .subtotal {
               display: none;
             }

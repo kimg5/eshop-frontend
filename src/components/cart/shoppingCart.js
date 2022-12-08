@@ -71,24 +71,6 @@ class ShoppingCart extends React.Component {
             }
         }
         const Wrapper = styled.div`
-        // display: none;
-        // @media (min-width: 776px) {
-        //   display: block;
-        //   .content {
-        //     display: grid;
-        //     // grid-template-columns: 100px 2fr 1fr 1fr 1fr;
-        //     justify-items: center;
-        //     column-gap: 2rem;
-        //     h5 {
-        //       color: var(--clr-grey-5);
-        //       font-weight: 400;
-        //     }
-        //   }
-      
-        //   .columns checkout {
-        //     margin-left: auto; 
-        // margin-right: 0;
-        //   }
           
         }
       `

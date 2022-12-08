@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import styled from 'styled-components'; 
 import TotalCost from "./TotalCost";
+import Button from '@mui/material/Button';
 
 const CheckoutForm = (props) => {
     return (
@@ -8,21 +9,19 @@ const CheckoutForm = (props) => {
             <div >
                 {/* <div className="column submit-form"> */}
                 <article>
-                            <div id="total">
+                      <div id="total">
                                 <TotalCost total ={props.total} />    
                             </div>
                             <div className="field is-grouped">
                                     <p className="control">
-                                        <button className="button is-link" >
-                                            Continue Shopping
-                                        </button>                                        
+                                        {/* <button className="button is-link" >Continue Shopping</button> */}
+                                        <Button variant="contained" className="buttonCart">Continue Shopping</Button>
                                     </p>
                                     <p className="control">
-                                        <button className="button is-link" href="#">
-                                            Checkout
-                                        </button>
+                                        {/* <button className="button is-link" href="#">  Checkout </button> */}
+                                        <Button variant="contained" color="success" >Checkout</Button>
                                     </p>
-                    </div>
+                      </div>
                     </article>
                 </div>
         </Wrapper>
