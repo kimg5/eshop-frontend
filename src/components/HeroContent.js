@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import { useNavigate } from "react-router-dom";
+import missionImg from "../assets/missionPhoto.jpg";
 
 export function HeroContent(props) {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ export function HeroContent(props) {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundImage: `url(${post.image})`,
+        
       }}
     >
       {/* Increase the priority of the hero background image */}
@@ -51,7 +53,7 @@ export function HeroContent(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link  variant="subtitle1" onClick={()=>{navigate('/products')}} >
+            <Link  variant="subtitle1" color="inherit" onClick={()=>{navigate('/products')}} >
               {post.linkText}
             </Link>
           </Box>

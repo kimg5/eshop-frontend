@@ -42,7 +42,7 @@ const Wrapper = styled.article`
               object-fit: cover;
             }
             h5 {
-              font-size: 1.2rem;
+              font-size: 16px;
               margin-bottom: 0;
             }
           

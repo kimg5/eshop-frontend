@@ -4,10 +4,11 @@ const ProductQuantity = (props) => {
     return (
         <Wrapper>
             <div className="column center-container">
-              <h5 className='amount'> Quantity</h5>
-              <input id={props.id} className="quantity" type="number" name="quantity" min="1" max="100" 
+          {/* <h5 className='amount'> Quantity</h5> */}
+          <label className="label">Quantity{'\u00A0'}
+              <input id={props.id} className="quantity" type="number" name="quantity" min="0" max="100" 
                 defaultValue={props.quantity} 
-                onChange={props.changeQuantity} />
+                onChange={props.changeQuantity} /></label>
             </div>
         </Wrapper>
     )
@@ -15,6 +16,9 @@ const ProductQuantity = (props) => {
 const Wrapper = styled.article`
 .subtotal {
   display: none;
+}
+.label{
+  font: 1.2rem; 
 }
 .price {
   display: none;

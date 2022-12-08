@@ -9,21 +9,21 @@ const CheckoutForm = (props) => {
             <div >
                 {/* <div className="column submit-form"> */}
                 <article>
-                      <div className="total">
-                                <TotalCost total ={props.total} />    
-                            </div>
-                            <div className="field is-grouped">
-                                    <p className="control">
-                                        {/* <button className="button is-link" >Continue Shopping</button> */}
-                                        <Button variant="contained" className="buttonCart">Continue Shopping</Button>
-                                    </p>
-                                    <p className="control">
-                                        {/* <button className="button is-link" href="#">  Checkout </button> */}
-                                        <Button variant="contained" color="success" >Checkout</Button>
-                                    </p>
-                      </div>
-                    </article>
-                </div>
+                  <div className="total">
+                    <TotalCost total ={props.total} />    
+                  </div>
+                  <div className="field is-grouped">
+                        <p className="control">
+                        {/* <button className="button is-link" href="#">  Checkout </button> */}
+                            <Button variant="contained" color="success" >Checkout</Button>
+                        </p>
+                        <p className="control">
+                        {/* <button className="button is-link" >Continue Shopping</button> */}
+                          <Button variant="contained" className="buttonCart">Continue Shopping</Button>
+                        </p>   
+                    </div>
+                  </article>
+              </div>
         </Wrapper>
         
     )

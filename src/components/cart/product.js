@@ -14,9 +14,9 @@ const Product = (props) => {
           {/* <img src={props.image} alt={props.name} /> */}
           <img src={"https://source.unsplash.com/random"} alt={props.name} />
             <div>
-                <h5 className='name'>{props.name}</h5>
-                <p className='color'> {props.name}{/* <span style={{ background: color }} /> */}</p>
-                <p className='color'> Code :{props.code} </p>
+                {/* <h5 className='name'>{props.description}</h5> */}
+                <p className='color'> {props.description}</p>
+                <p className='color'> Color :{props.code} </p>
                 <h5 className='price-small'>${props.price}</h5>
             </div>
         </div>
@@ -58,13 +58,13 @@ const Wrapper = styled.article`
     object-fit: cover;
   }
   h5 {
-    font-size: 1.2rem;
+    font-size: 16px;
     margin-bottom: 0;
   }
 
   .color {
     // color: var(--clr-grey-5);
-    font-size: 1.2rem;
+    font-size: 16pxrem;
     // letter-spacing: var(--spacing);
     text-transform: capitalize;
     margin-bottom: 0;
@@ -133,7 +133,7 @@ const Wrapper = styled.article`
       font-size: 0.85rem;
     }
     .color {
-      font-size: 0.85rem;
+      font-size: 14px;
       span {
         width: 0.75rem;
         height: 0.75rem;

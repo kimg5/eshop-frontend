@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     object-fit: cover;
   }
   h5 {
-    font-size: 0.75rem;
+    font-size: 16px;
     margin-bottom: 0;
   }
   
@@ -114,7 +114,7 @@ const Wrapper = styled.div`
       font-size: 0.85rem;
     }
     .color {
-      font-size: 0.85rem;
+      font-size: 16px;
       span {
         width: 0.75rem;
         height: 0.75rem;
