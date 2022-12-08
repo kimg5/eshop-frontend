@@ -7,7 +7,7 @@ const SingleProductPage = ({closeHandler,row,addToCartHandler}) => {
   return (
      <Wrapper>
       <div className="section section-center page">
-        <Link onClick={closeHandler} className="btn" variant="contained" color="success">
+        <Link onClick={closeHandler} className="btn" style={{color: 'blue'}}>
           back to products
         </Link>
         <div className="product-center">
@@ -31,7 +31,7 @@ const SingleProductPage = ({closeHandler,row,addToCartHandler}) => {
               {row.brand}
             </p>
             <hr />
-            <Link className="btn" onClick={()=>{addToCartHandler(row)}}>
+            <Link className="btn" style={{color: 'blue'}} onClick={()=>{addToCartHandler(row)}}>
             Add to Cart
           </Link>
             
