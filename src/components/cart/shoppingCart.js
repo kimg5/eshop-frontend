@@ -1,9 +1,9 @@
 
 import React, {Component} from "react";
 import styled from 'styled-components'
-import Product from "./product";
-import Disaccount from "./disaccount";
-import CheckoutForm from "./checkoutForm";
+import Product from "./Product";
+// import Disaccount from "./disaccount";
+import CheckoutForm from "./CheckoutForm";
 import data from "./data";
 
 class ShoppingCart extends React.Component {

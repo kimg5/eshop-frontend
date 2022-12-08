@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import ProductImage from "./productImage";
-import ProductDescription from "./productDescription";
-import ProductQuantity from "./productQuantity";
-import ProductPrice from "./productPrice";
-import ProductSubtotal from "./productSubtotal";
+import ProductImage from "./ProductImage";
+import ProductDescription from "./ProductDescription";
+import ProductQuantity from "./ProductQuantity";
+import ProductPrice from "./ProductPrice";
+import ProductSubtotal from "./ProductSubtotal";
 import styled from 'styled-components'; 
 
 

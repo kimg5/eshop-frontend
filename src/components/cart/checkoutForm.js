@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from 'styled-components'; 
-import TotalCost from "./totalCost";
+import TotalCost from "./TotalCost";
 
 const CheckoutForm = (props) => {
     return (
