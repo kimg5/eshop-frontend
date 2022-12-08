@@ -4,9 +4,6 @@ import {FeaturedProducts} from "../components/FeaturedProducts";
 import {Hero} from "../components/Hero";
 import Box from "@mui/material/Box";
 
-import "./Home.css";
-
-
 function Home() {
   const go = (url) => {
     

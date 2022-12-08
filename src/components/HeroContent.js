@@ -5,9 +5,10 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
-
+import { useNavigate } from "react-router-dom";
 
 export function HeroContent(props) {
+  const navigate = useNavigate();
   const { post } = props;
 
   return (
@@ -50,7 +51,7 @@ export function HeroContent(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link  variant="subtitle1" href="/products" >
+            <Link  variant="subtitle1" onClick={()=>{navigate('/products')}} >
               {post.linkText}
             </Link>
           </Box>
