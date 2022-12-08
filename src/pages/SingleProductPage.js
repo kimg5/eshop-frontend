@@ -7,7 +7,7 @@ const SingleProductPage = ({closeHandler,row,addToCartHandler}) => {
   return (
      <Wrapper>
       <div className="section section-center page">
-        <Link onClick={closeHandler} className="btn">
+        <Link onClick={closeHandler} className="btn" variant="contained" color="success">
           back to products
         </Link>
         <div className="product-center">
