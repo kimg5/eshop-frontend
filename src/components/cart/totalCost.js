@@ -9,7 +9,7 @@ const TotalCost = (props) => {
         <Wrapper>
             <article>
           <h5 className="total">Subtotal: ${props.total} </h5>
-          <h5>Shipping Cost: { shipping}</h5>
+          <h5>Shipping Cost: ${ shipping}</h5>
           <h5 className="total">Tax: ${tax} </h5>
           <h4 className="total">Total: ${totalCost.toFixed(2)} </h4>
                 </article>
