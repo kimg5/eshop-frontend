@@ -20,9 +20,8 @@ class ShoppingCart extends React.Component {
 
     for (let product of products) {
       console.log(product);
-      //   this.state.productComponents.push(
       this.items.push(
-        <Product key={product.code} image={product.image} description={product.description} code={product.code} changeQuantity={this.changeQuantity} totalCost={product.quantity * product.price} quantity={product.quantity} price={product.price} />
+        <Product key={product.code} image={product.image} name={product.name} code={product.productId} changeQuantity={this.changeQuantity} totalCost={product.quantity * product.price} quantity={product.quantity} price={product.price} />
       );
       total += Number(product.quantity) * Number(product.price);
     }
@@ -59,7 +58,6 @@ class ShoppingCart extends React.Component {
           productComponents: newState,
           total: (Number(prevState.total) + Number(newProps.totalCost) - Number(oldTotalCost)).toFixed(2),
         }));
-        // console.log(newState);
       }
     }
     e.preventDefault();

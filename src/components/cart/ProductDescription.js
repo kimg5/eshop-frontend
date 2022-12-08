@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import styled from 'styled-components'; 
+import styled from "styled-components";
 
-const ProductDescription = (props) => { 
-    return (
-        <Wrapper>          
-        {/* <div className="column column center-container"> */}
-                        <h5 className='name'>{props.description}</h5>
-                        <h5>Product code:  {props.code}</h5>
-            {/* </div> */}
-            </Wrapper>  
-)
-}
+const ProductDescription = (props) => {
+  return (
+    <Wrapper>
+      {/* <div className="column column center-container"> */}
+      <h5 className="name">{props.name}</h5>
+      <h5>Product code: {props.code}</h5>
+      {/* </div> */}
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
-.subtotal {
+  .subtotal {
     display: none;
   }
   .price {
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
     font-size: 16px;
     margin-bottom: 0;
   }
-  
+
   .color {
     color: var(--clr-grey-5);
     font-size: 0.75rem;
@@ -146,5 +146,5 @@ const Wrapper = styled.div`
       }
     }
   }
-  `
+`;
 export default ProductDescription;

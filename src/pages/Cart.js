@@ -6,8 +6,10 @@ import ShoppingCart from "../components/cart/ShoppingCart";
 // import data from "../components/cart/data";
 import { api_normal_orders_url } from "../utils/constants";
 import http from "../utils/http";
+import { useNavigate } from "react-router-dom";
 
 export function Cart() {
+  const navigate = useNavigate();
   let json = localStorage.getItem("products");
 
   const [products, setProducts] = React.useState(JSON.parse(json));
@@ -35,6 +37,7 @@ export function Cart() {
     http.post(api_normal_orders_url, order).then((resp) => {
       console.log(resp);
       localStorage.removeItem(resp);
+      navigate("/products", { replace: true });
     });
   };
 

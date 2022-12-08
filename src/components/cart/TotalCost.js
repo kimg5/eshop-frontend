@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import styled from 'styled-components'; 
+import styled from "styled-components";
+import { formatPrice } from "../../utils/helpers";
 
 const TotalCost = (props) => {
-  const shipping = 5.99; 
-  const tax = (props.total * 0.13).toFixed(2); 
-  const totalCost = parseFloat(props.total) + parseFloat(shipping) + parseFloat(tax); 
-    return (
-        <Wrapper>
-            <article>
-          <h5 className="total">Subtotal: ${props.total} </h5>
-          <h5>Shipping Cost: ${ shipping}</h5>
-          <h5 className="total">Tax: ${tax} </h5>
-          <h4 className="total">Total: ${totalCost.toFixed(2)} </h4>
-                </article>
-        </Wrapper>
-    )
-    
-}
+  const shippingFee = 5.99;
+  const tax = (props.total * 0.13).toFixed(2);
+  const total = parseFloat(props.total) + parseFloat(shippingFee) + parseFloat(tax);
+  return (
+    <Wrapper>
+      <article>
+        <h5 className="total">Subtotal: {formatPrice(props.total)} </h5>
+        <h5>Shipping Fee: ${shippingFee}</h5>
+        <h5 className="total">Tax: {formatPrice(tax)} </h5>
+        <h4 className="total">Total: {formatPrice(total)} </h4>
+      </article>
+    </Wrapper>
+  );
+};
 const Wrapper = styled.section`
   margin-top: 1rem;
   display: flex;
@@ -47,6 +47,6 @@ const Wrapper = styled.section`
     text-align: center;
     font-weight: 700;
   }
-`
+`;
 
 export default TotalCost;

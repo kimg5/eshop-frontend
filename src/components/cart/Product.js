@@ -1,33 +1,32 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import ProductImage from "./ProductImage";
 import ProductDescription from "./ProductDescription";
 import ProductQuantity from "./ProductQuantity";
 import ProductPrice from "./ProductPrice";
 import ProductSubtotal from "./ProductSubtotal";
-import styled from 'styled-components'; 
+import styled from "styled-components";
+import { formatPrice } from "../../utils/helpers";
 
-
-const Product = (props) => { 
-    return (
-        <Wrapper>
-        <div className="title">
-          {/* <img src={props.image} alt={props.name} /> */}
-          <img src={"https://source.unsplash.com/random"} alt={props.name} />
-            <div>
-                {/* <h5 className='name'>{props.description}</h5> */}
-                <p className='color'> {props.description}</p>
-                <p className='color'> Color :{props.code} </p>
-                <h5 className='price-small'>${props.price}</h5>
-            </div>
+const Product = (props) => {
+  return (
+    <Wrapper>
+      <div className="title">
+        <img src={props.image} alt={props.name} />
+        {/* <img src={"https://source.unsplash.com/random"} alt={props.name} /> */}
+        <div>
+          {/* <h5 className='name'>{props.description}</h5> */}
+          <p className="color"> {props.name}</p>
+          <p className="color">{props.code} </p>
+          <h5 className="price-small">{props.price}</h5>
         </div>
-              <ProductQuantity id={props.code} changeQuantity={props.changeQuantity} quantity={props.quantity} />
-              <ProductPrice price={props.price} />
-              <ProductSubtotal totalCost={props.totalCost} />
-    
-             </Wrapper>
-    )
-}
-                    
+      </div>
+      <ProductQuantity id={props.code} changeQuantity={props.changeQuantity} quantity={props.quantity} />
+      <ProductPrice price={props.price} />
+      <ProductSubtotal totalCost={formatPrice(props.totalCost)} />
+    </Wrapper>
+  );
+};
+
 const Wrapper = styled.article`
   .subtotal {
     display: none;
@@ -165,5 +164,5 @@ const Wrapper = styled.article`
       }
     }
   }
-`
+`;
 export default Product;
