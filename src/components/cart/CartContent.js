@@ -1,10 +1,10 @@
 import * as React from 'react';
 // import './Cart.css';
 import { Link } from 'react-router-dom'
-import ShoppingCart from './shoppingCart';
+import ShoppingCart from './ShoppingCart';
 import CartColumns from './CartColumns';
 import styled from 'styled-components'
-import TotalCost from './totalCost';
+import TotalCost from './TotalCost';
 
 export function CartContent() {
   
