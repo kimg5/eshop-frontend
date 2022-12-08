@@ -21,9 +21,9 @@ function Home() {
             pb: 6,
           }}
         >
-       <Hero />
-           <FeaturedProducts /> 
-           </Box>   
+            <Hero />
+            <FeaturedProducts /> 
+        </Box>   
       </main>
    );
   }
