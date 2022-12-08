@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { formatPrice } from "../../utils/helpers";
 
 const TotalCost = (props) => {
-  const shippingFee = 5.99;
+  const shippingFee = 599;
   const tax = (props.total * 0.13).toFixed(2);
   const total = parseFloat(props.total) + parseFloat(shippingFee) + parseFloat(tax);
   return (
     <Wrapper>
       <article>
         <h5 className="total">Subtotal: {formatPrice(props.total)} </h5>
-        <h5>Shipping Fee: ${shippingFee}</h5>
+        <h5>Shipping Fee: {formatPrice(shippingFee)}</h5>
         <h5 className="total">Tax: {formatPrice(tax)} </h5>
         <h4 className="total">Total: {formatPrice(total)} </h4>
       </article>

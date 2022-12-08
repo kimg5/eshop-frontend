@@ -24,9 +24,7 @@ const AboutPage = () => {
             <li> Yi </li>
             <li> Wenzhe </li>
             <li> Nada</li>
-            <p>
-              We are a group of John Abbott college students in the program of full stack development. We are dedicated to work as a cohesive group to make a user friendly e-commerce website.
-            </p>
+            <p>We are a group of John Abbott college students in the program of full stack development. We are dedicated to work as a cohesive group to make a user friendly e-commerce website.</p>
           </p>
         </article>
       </Wrapper>
@@ -36,10 +34,13 @@ const AboutPage = () => {
         <img src={missionImg} alt="our mission" />
         <article>
           <div className="title">
-            <h2>Motivation for the Website</h2>
+            <h2>Our Goal</h2>
           </div>
           <p>
-            Online shopping has increased during the pandemic. Trading companies who could survive are those who had online shopping websites.Companies realized the importance of having such online platforms. Because of the importance of “Ecommerce” and the demand for such websites, we did our project on this topic. Our website connects shoppers to products, namely furniture to make online purchases.
+            Home furnishing and furniture stores in North America witnessed a 191.2% increase in e-commerce sales after the pandemic as there have been more people adapting work-from-home lifestyle, we- Schrödinger’s REACT team find it is a good
+            opportunity to enter the furniture e-commerce business. IKEA has been a big player in the furniture business section but shopping at IKEA’S website could be overwhelming for some people due to the tremendous number of pages customers may
+            need to navigate themselves through. Therefore our vision is to build a minimal style website with its core function for online furniture. The design is minimal with functionality as the main objective. Pages should be simple without
+            clusters and buttons and links should be easy to see and intuitive to use without compromising the appealing aspect of the website.
           </p>
         </article>
       </Wrapper>
