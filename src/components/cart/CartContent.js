@@ -10,13 +10,13 @@ export function CartContent() {
   
   return (
     
-    <Wrapper className='section section-center'>
+    <ContentWrapper className='section section-center'>
       <CartColumns />
       <ShoppingCart />
-      </Wrapper>
+      </ContentWrapper>
   )
 }
-const Wrapper = styled.section`
+const ContentWrapper = styled.section`
   .link-container {
     display: flex;
     justify-content: space-between;

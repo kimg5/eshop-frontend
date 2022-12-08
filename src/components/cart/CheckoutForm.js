@@ -1,35 +1,45 @@
-import React, {Component} from "react";
-import styled from 'styled-components'; 
+import React, { Component } from "react";
+import styled from "styled-components";
 import TotalCost from "./TotalCost";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = (props) => {
-    return (
-        <Wrapper>
-            <div >
-                {/* <div className="column submit-form"> */}
-                <article>
-                  <div className="total">
-                    <TotalCost total ={props.total} />    
-                  </div>
-                  <div className="field is-grouped">
-                        <p className="control">
-                        {/* <button className="button is-link" href="#">  Checkout </button> */}
-                            <Button variant="contained" color="success" >Checkout</Button>
-                        </p>
-                        <p className="control">
-                        {/* <button className="button is-link" >Continue Shopping</button> */}
-                          <Button variant="contained" className="buttonCart">Continue Shopping</Button>
-                        </p>   
-                    </div>
-                  </article>
-              </div>
-        </Wrapper>
-        
-    )
-}
-                
-               
+  const navigate = useNavigate();
+  return (
+    <Wrapper>
+      <div>
+        {/* <div className="column submit-form"> */}
+        <article>
+          <div className="total">
+            <TotalCost total={props.total} />
+          </div>
+          <div className="field is-grouped">
+            <p className="control">
+              {/* <button className="button is-link" href="#">  Checkout </button> */}
+              <Button variant="contained" color="success" onClick={props.createOrder}>
+                Checkout
+              </Button>
+            </p>
+            <p className="control">
+              {/* <button className="button is-link" >Continue Shopping</button> */}
+              <Button
+                variant="contained"
+                className="buttonCart"
+                onClick={() => {
+                  navigate("/products");
+                }}
+              >
+                Continue Shopping
+              </Button>
+            </p>
+          </div>
+        </article>
+      </div>
+    </Wrapper>
+  );
+};
+
 const Wrapper = styled.section`
   margin-top: 3rem;
   display: flex;
@@ -60,17 +70,15 @@ const Wrapper = styled.section`
     text-align: center;
     font-weight: 700;
   }
-  button.is-dark{
-    background-color: #007bff; 
+  button.is-dark {
+    background-color: #007bff;
   }
-  button.is-link{
-    background-color: #007bff; 
+  button.is-link {
+    background-color: #007bff;
   }
-  .total{
-    width: 300px; 
+  .total {
+    width: 300px;
   }
-`
-
-
+`;
 
 export default CheckoutForm;
