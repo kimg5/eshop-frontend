@@ -61,15 +61,7 @@ export function Signup() {
               <TextField required fullWidth name="password" label="Password" type="password" id="password" autoComplete="new-password" />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                name="confirmPassword"
-                label="Confirm Password"
-                type="password"
-                id="confirmPassword"
-                autoComplete="confirmPassword"
-              />
+              <TextField required fullWidth name="confirmPassword" label="Confirm Password" type="password" id="confirmPassword" autoComplete="confirmPassword" />
             </Grid>
             <Grid item xs={12}>
               <TextField required fullWidth name="card" label="Credit card" type="text" id="card" autoComplete="card" />
