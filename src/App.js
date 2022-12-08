@@ -11,6 +11,7 @@ import Admin from "./pages/adminDashboard/Admin";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Signup from "./pages/Signup";
+import UserDashboard from "./pages/UserDashboard";
 
 import WithAuth from "./components/WithAuth";
 import { ThemeContextProvider } from "./context/themeContext";
@@ -31,6 +32,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="signup" element={<Signup />} />
           
+          <Route path="userdashboard" element={<UserDashboard />} />
+
           <Route path="cart" element={<Cart />} />
           <Route path="editprofile" element={<EditProfile />} />
           <Route path="product" element={<SingleProductPage />} />
