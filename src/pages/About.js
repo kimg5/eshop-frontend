@@ -5,34 +5,28 @@ import styled from "styled-components";
 import PageHero from "../components/PageHero";
 
 import "./About.css";
-import aboutImg from "../assets/hero-bcg.jpeg";
-import missionImg from "../assets/missionPhoto.jpg";
+import aboutImg from "../assets/team.jpg";
+import missionImg from "../assets/purpose.jpg";
 import historyImg from "../assets/historyPhoto.jpg";
 
 const AboutPage = () => {
   return (
     <main className="page ">
-      
       <Wrapper className="page section ">
-      
         {" "}
         {/* needs wrapper instead of div*/}
         <img src={aboutImg} alt="nice desk" />
         <article>
           <div className="title">
-            <h2>Our Story</h2>
+            <h2>Our Team</h2>
           </div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-            accusantium sapiente tempora sed dolore esse deserunt eaque
-            excepturi, delectus error accusamus vel eligendi, omnis beatae.
-            Quisquam, dicta. Eos quod quisquam esse recusandae vitae neque
-            dolore, obcaecati incidunt sequi blanditiis est exercitationem
-            molestiae delectus saepe odio eligendi modi porro eaque in libero
-            minus unde sapiente consectetur architecto. Ullam rerum, nemo iste
-            ex, eaque perspiciatis nisi, eum totam velit saepe sed quos
-            similique amet. Ex, voluptate accusamus nesciunt totam vitae esse
-            iste.
+            <li> Yi </li>
+            <li> Wenzhe </li>
+            <li> Nada</li>
+            <p>
+              We are a group of John Abbott college students in the program of full stack development. We are dedicated to work as a cohesive group to make a user friendly e-commerce website.
+            </p>
           </p>
         </article>
       </Wrapper>
@@ -42,41 +36,10 @@ const AboutPage = () => {
         <img src={missionImg} alt="our mission" />
         <article>
           <div className="title">
-            <h2>Mission</h2>
+            <h2>Motivation for the Website</h2>
           </div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-            accusantium sapiente tempora sed dolore esse deserunt eaque
-            excepturi, delectus error accusamus vel eligendi, omnis beatae.
-            Quisquam, dicta. Eos quod quisquam esse recusandae vitae neque
-            dolore, obcaecati incidunt sequi blanditiis est exercitationem
-            molestiae delectus saepe odio eligendi modi porro eaque in libero
-            minus unde sapiente consectetur architecto. Ullam rerum, nemo iste
-            ex, eaque perspiciatis nisi, eum totam velit saepe sed quos
-            similique amet. Ex, voluptate accusamus nesciunt totam vitae esse
-            iste.
-          </p>
-        </article>
-      </Wrapper>
-      <Wrapper className="page section ">
-        {" "}
-        {/* needs wrapper instead of div*/}
-        <img src={historyImg} alt="history phot" />
-        <article>
-          <div className="title">
-            <h2>History</h2>
-          </div>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-            accusantium sapiente tempora sed dolore esse deserunt eaque
-            excepturi, delectus error accusamus vel eligendi, omnis beatae.
-            Quisquam, dicta. Eos quod quisquam esse recusandae vitae neque
-            dolore, obcaecati incidunt sequi blanditiis est exercitationem
-            molestiae delectus saepe odio eligendi modi porro eaque in libero
-            minus unde sapiente consectetur architecto. Ullam rerum, nemo iste
-            ex, eaque perspiciatis nisi, eum totam velit saepe sed quos
-            similique amet. Ex, voluptate accusamus nesciunt totam vitae esse
-            iste.
+            Online shopping has increased during the pandemic. Trading companies who could survive are those who had online shopping websites.Companies realized the importance of having such online platforms. Because of the importance of “Ecommerce” and the demand for such websites, we did our project on this topic. Our website connects shoppers to products, namely furniture to make online purchases.
           </p>
         </article>
       </Wrapper>
@@ -93,7 +56,6 @@ const Wrapper = styled.section`
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
   }
- 
 `;
 
 export default AboutPage;
