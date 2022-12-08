@@ -16,7 +16,6 @@ import WithAuth from "./components/WithAuth";
 import { ThemeContextProvider } from "./context/themeContext";
 import "./App.css";
 import EditProfile from "./pages/EditProfile";
-import SignupConfirmation from "./pages/SignupConfirmation";
 
 function App() {
   return (
@@ -30,8 +29,7 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="about" element={<About />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="signupconfirmation" element={<SignupConfirmation />} />
-
+          
           <Route path="cart" element={<Cart />} />
           <Route path="editprofile" element={<EditProfile />} />
 
