@@ -15,7 +15,7 @@ const publicItems = [
 ];
 
 const adminItems = [{ title: "Admin", url: "/admin" }];
-const loggedInItems = [{ title: "Logout", url: "/logout" }];
+const loggedInItems = [{ title: "UserDashboard", url: "/userdashboard" },{ title: "Logout", url: "/logout" }];
 
 const loggedOutItems = [
   { title: "Login", url: "/login" },

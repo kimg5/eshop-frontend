@@ -17,7 +17,7 @@ function Login() {
   if (role === "admin") {
     navigate("/admin", { replace: true });
   } else if (isLoggedIn) {
-    navigate("/cart", { replace: true });
+    navigate("/userdashboard", { replace: true });
   }
   return <LoginForm handleSubmit={handleSubmit} />;
 }

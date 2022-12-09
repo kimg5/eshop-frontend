@@ -52,9 +52,9 @@ function Header() {
 
 function HeaderBar({ changeTheme, navItems, go }) {
   return (
-    <AppBar component="nav">
+    <AppBar component="nav" sx={{zIndex:9999}}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
           <Grid container spacing={1}>
             <Grid xs={1}>MERN</Grid>
             <Grid xs={1}>

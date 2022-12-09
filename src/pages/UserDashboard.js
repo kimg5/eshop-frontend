@@ -1,58 +1,96 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PeopleIcon from "@mui/icons-material/People";
-import Grid from "@mui/material/Unstable_Grid2";
 import PasswordIcon from "@mui/icons-material/Password";
 import Dashboard from "../components/Dashboard";
 import { ChangePassword } from "./userDashboard/ChangePassword";
+import EditProfile from "./userDashboard/EditProfile";
+import Orders from "./userDashboard/Orders";
+
+import http from "../utils/http";
+import { api_change_password_url, api_profile_url, api_normal_orders_url, api_cancel_order_url } from "../utils/constants";
+import React from "react";
 
 const list = [
   {
     title: "Profile",
     icon: <PeopleIcon />,
-    childIndex:0
-  },
-  {
-    title: "Order",
-    icon: <ShoppingCartIcon />,
-    childIndex:1
+    childIndex: 0,
   },
   {
     title: "Password",
     icon: <PasswordIcon />,
-    childIndex:2
+    childIndex: 1,
+  },
+  {
+    title: "Order",
+    icon: <ShoppingCartIcon />,
+    childIndex: 2,
   },
 ];
 
-const  Portlet = ({name}) => {
-  return (
-    <Grid container spacing={3}>
-      {/* Chart */}
-      <Grid item xs={12} md={8} lg={9}>
-          <div>{name}</div>
-      </Grid>
-    </Grid>
-  );
+function createData(id, total, shippingFee, status, createdAt) {
+  return {
+    id,
+    total,
+    shippingFee,
+    status,
+    createdAt,
+    items: [
+      {
+        productId: "Anonymous1",
+        name: "2020-01-02",
+        price: 10,
+        quantity: 2,
+      },
+      {
+        productId: "Anonymous",
+        name: "2020-01-02",
+        price: 20,
+        quantity: 1,
+      },
+    ],
+  };
+}
+const rows = [createData("1", 159, 6.0, "open", "2020-01-01"), createData("1", 159, 6.0, "open", "2020-01-01")];
+
+const profileHandler = async (profileForm) => {
+  console.log("profileHandler");
+  return http.post(api_profile_url, profileForm);
 };
 
-const Profile = () =>{
-    return <Portlet name='Profile' />
-}
-const Password = () =>{
-    return <Portlet name='Password' />
-}
-const Order = () =>{
-    return <Portlet name='Order' />
-}
+const changePasswordHandler = async (passwordForm) => {
+  console.log("changePasswordHandler");
+  return http.post(api_change_password_url, passwordForm);
+};
 
-const passwordHandler = ({password,confirmPassword}) => {
+const getOrders = async () => {
+  console.log("changePasswordHandler");
+  let orders = await http.get(api_normal_orders_url);
+  return orders;
+};
 
-}
+const cancelOrderHandler = async (row) => {
+    console.log("cancel order");
+    console.log(row._id);
+    http.post(api_cancel_order_url + row._id).then(
+        resp => {
+            console.log(resp);
+        }
+    );
+}     
 
-const porlets =[
-    <Portlet name={list[1].title}/>,
-    <Portlet name={list[2].title}/>,
-    <ChangePassword handler={passwordHandler}/>
-]
 export default function UserDashboard() {
-  return <Dashboard list={list} children={porlets}/>;
+  const [orders,setOrders] = React.useState();
+  React.useEffect(() => {
+    getOrders().then(
+        resp =>{
+            setOrders(resp);
+        }
+    );
+
+  }, []);
+
+  const portlets = [<EditProfile handler={profileHandler} />, <ChangePassword handler={changePasswordHandler} />, <Orders items={orders} cancelOrderHandler={cancelOrderHandler}/>];
+
+  return <Dashboard list={list} children={portlets} />;
 }

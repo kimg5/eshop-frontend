@@ -6,9 +6,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import IconButton from "@mui/material/IconButton";
-import Container from "@mui/material/Container";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Paper from "@mui/material/Paper";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -18,7 +16,7 @@ function AppList({ list,handler}) {
     <React.Fragment>
       {list.map(({ title, icon, childIndex }) => {
         return (
-          <ListItemButton onClick={()=>{handler(childIndex)}}>
+          <ListItemButton key={title} onClick={()=>{handler(childIndex)}}>
             <ListItemIcon>{icon}</ListItemIcon>
             <ListItemText primary={title} />
           </ListItemButton>
@@ -54,7 +52,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 }));
 
 function Dashboard(props) {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -66,9 +64,9 @@ function Dashboard(props) {
   }  
 
   return (
-    <Box sx={{ display: "flex", mt: 6, ml: -24, width: "100vw", height: "85vh" }}>
+    <Box sx={{ display: "flex", mt: 6, ml: -54, width: "100vw", height: "86vh"}}>
       <CssBaseline />
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} >
         <Toolbar
           sx={{
             display: "flex",
@@ -93,7 +91,9 @@ function Dashboard(props) {
           overflow: "auto",
         }}
       >
-        <Paper sx={{ m:0,p: 2, display: "block", width: "95vw",height:'86vh' }}>{props.children[childIndex]}</Paper>
+        <container sx={{ml:8,mt:6}}>
+          {props.children[childIndex]}
+        </container>
       </Box>
     </Box>
   );

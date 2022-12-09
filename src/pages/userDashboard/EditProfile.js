@@ -10,21 +10,19 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
-export function ChangePassword({ handler }) {
-  const [message,setMessage] =React.useState('');
-  
+export function EditProfile({ handler }) {
+  const [message, setMessage] = React.useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    
-    let passwordForm = {
-      password: data.get("password"),
-      confirmPassword: data.get("confirmPassword"),
+    let profileForm = {
+      email: data.get("email"),
+      card: data.get("card"),
     };
-    handler(passwordForm).then(
+    handler(profileForm).then(
       resp =>{
         setMessage(resp);
      }
@@ -35,22 +33,26 @@ export function ChangePassword({ handler }) {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <Stack sx={{ width: "100%" }} spacing={2}>
-        {message &&
-        <Alert variant="filled" severity="error" action={
-          <IconButton
-            aria-label="close"
-            color="inherit"
-            size="small"
-            onClick={() => {
-              setMessage('');
-            }}
+        {message && (
+          <Alert
+            variant="filled"
+            severity="error"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setMessage("");
+                }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
           >
-            <CloseIcon fontSize="inherit" />
-          </IconButton>
-        }>
-          {message}
-        </Alert>
-        } 
+            {message}
+          </Alert>
+        )}
         <Box
           sx={{
             marginTop: 8,
@@ -63,27 +65,20 @@ export function ChangePassword({ handler }) {
             <SubscriptionsIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Change Your Password
+            Edit Your Profile
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <TextField required fullWidth name="password" label="New Password" type="password" id="password" autoComplete="new-password" />
+                <TextField fullWidth id="email" label="Email Address" name="email" autoComplete="email"  />
               </Grid>
+
               <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="confirmPassword"
-                  label="Confirm new Password"
-                  type="password"
-                  id="confirmPassword"
-                  autoComplete="confirmPassword"
-                />
+                <TextField fullWidth name="card" label="Credit or debit card" type="text" id="card" autoComplete="card" />
               </Grid>
             </Grid>
             <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-              Update Password
+              Update Profile
             </Button>
           </Box>
         </Box>
@@ -92,4 +87,4 @@ export function ChangePassword({ handler }) {
   );
 }
 
-export default ChangePassword;
+export default EditProfile;
