@@ -11,7 +11,7 @@ const Product = (props) => {
   return (
     <Wrapper>
       <div className="title">
-        <img src={props.image} alt={props.name} />
+        {/* <img src={props.image} alt={props.name} /> */}
         {/* <img src={"https://source.unsplash.com/random"} alt={props.name} /> */}
         <div>
           {/* <h5 className='name'>{props.description}</h5> */}

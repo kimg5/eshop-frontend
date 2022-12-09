@@ -25,10 +25,11 @@ class ShoppingCart extends React.Component {
       );
       total += Number(product.quantity) * Number(product.price);
     }
-    console.log(this.items.length);
     this.state.productComponents = this.items;
     this.state.products = [...products];
     this.state.total = total;
+    localStorage.setItem("total", this.state.total);
+    localStorage.setItem("shippingFee", 599);
     // this.setState({ total: total, productComponents: this.items });
   }
 
@@ -58,6 +59,7 @@ class ShoppingCart extends React.Component {
           productComponents: newState,
           total: (Number(prevState.total) + Number(newProps.totalCost) - Number(oldTotalCost)).toFixed(2),
         }));
+        localStorage.setItem("total", this.state.total);
       }
     }
     e.preventDefault();
@@ -68,9 +70,12 @@ class ShoppingCart extends React.Component {
       <Wrapper>
         <div>
           {this.state.productComponents}
+          {
+          this.state.products && this.state.products.length > 0 &&
           <div>
             <CheckoutForm total={this.state.total} createOrder={this.createOrder} />
           </div>
+          }
         </div>
       </Wrapper>
     );

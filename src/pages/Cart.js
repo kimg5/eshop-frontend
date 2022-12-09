@@ -11,32 +11,22 @@ import { useNavigate } from "react-router-dom";
 export function Cart() {
   const navigate = useNavigate();
   let json = localStorage.getItem("products");
-
+  if(json == null || json == undefined){
+    json = "[]";
+  }  
   const [products, setProducts] = React.useState(JSON.parse(json));
   const createOrder = () => {
     console.log("createOrder");
     let order = {
-      shippingFee: 10000,
-      total: 20000,
-      items: [
-        {
-          productId: "6386bf0330dc026263ee1d3d",
-          name: "accent chair",
-          price: 25999,
-          quantity: 2,
-        },
-        {
-          productId: "6386bf4d30dc026263eeae22",
-          name: "albany sectional",
-          price: 109999,
-          quantity: 4,
-        },
-      ],
+      shippingFee: localStorage.getItem("shippingFee"),
+      total: localStorage.getItem("total"),
+      items: JSON.parse(localStorage.getItem("products"))
     };
 
     http.post(api_normal_orders_url, order).then((resp) => {
-      console.log(resp);
-      localStorage.removeItem(resp);
+      localStorage.removeItem("products");
+      localStorage.removeItem("total");
+      localStorage.removeItem("shippingFee");
       navigate("/products", { replace: true });
     });
   };
