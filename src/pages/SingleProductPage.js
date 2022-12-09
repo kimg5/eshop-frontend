@@ -11,7 +11,7 @@ const SingleProductPage = ({ closeHandler, row, addToCartHandler }) => {
           back to products
         </Link>
         <div className="product-center">
-          <img src={row.img} alt={row.name} />
+          <img src={row.image} alt={row.name} />
           {/* <ProductImages images={images} />*/}
           <section className="content">
             <h2>{row.name}</h2>
