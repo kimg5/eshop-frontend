@@ -28,31 +28,6 @@ const list = [
   },
 ];
 
-function createData(id, total, shippingFee, status, createdAt) {
-  return {
-    id,
-    total,
-    shippingFee,
-    status,
-    createdAt,
-    items: [
-      {
-        productId: "Anonymous1",
-        name: "2020-01-02",
-        price: 10,
-        quantity: 2,
-      },
-      {
-        productId: "Anonymous",
-        name: "2020-01-02",
-        price: 20,
-        quantity: 1,
-      },
-    ],
-  };
-}
-const rows = [createData("1", 159, 6.0, "open", "2020-01-01"), createData("1", 159, 6.0, "open", "2020-01-01")];
-
 const profileHandler = async (profileForm) => {
   console.log("profileHandler");
   return http.post(api_profile_url, profileForm);
