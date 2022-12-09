@@ -35,6 +35,7 @@ function ProductDetail({ detail, closeHandler }) {
         productId: selected._id,
         price: selected.price,
         name: selected.name,
+        image:selected.image,
         quantity: 1,
       };
       products.push(product);
